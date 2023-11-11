@@ -7,7 +7,7 @@
     --corPrincipal: #A100E6;
     --corFundo2: #8824B3;
     --corFundo3: #693380;
-
+    --corDone: #8e8f8e72;
 }
 
 * {
@@ -128,7 +128,7 @@ ul {
     list-style: none;
 }
 
-li {
+li {    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -160,4 +160,13 @@ li input {
 span {
     user-select: none;
     cursor: pointer;
+}
+
+.done{
+    background-color: var(--corDone);
+    color: white;
+}
+.done p{
+    text-decoration: line-through;
+    font-style: italic;
 }
