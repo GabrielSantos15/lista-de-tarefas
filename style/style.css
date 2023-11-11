@@ -5,7 +5,7 @@
     --corTexto: #333;
     --corCard: #f5f5f5;
     --corPrincipal: #A100E6;
-    --corFundo2: #8824B3;
+    --corFundo2: #CB77BE;
     --corFundo3: #693380;
     --corDone: #8e8f8e72;
 }
@@ -21,7 +21,6 @@
 
 body {
     background-color: var(--corPrincipal);
-    height: 100vh;
 }
 
 main {
@@ -30,7 +29,7 @@ main {
     justify-content: center;
     align-items: center;
 
-    margin: 10vh auto;
+    margin: auto;
 
     width: min(100vw, 740px);
 
@@ -86,7 +85,6 @@ h1 {
     font-size: 1.2rem;
     text-indent: 20px;
     flex-grow: 1;
-
 }
 
 #form button {
@@ -147,8 +145,11 @@ li {
 li p {
     width: 100%;
     height: auto;
-    text-wrap: wrap;
     text-align: start;
+
+    text-overflow: clip;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 li input {
