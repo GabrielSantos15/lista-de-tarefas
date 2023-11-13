@@ -15,13 +15,23 @@
     <main>
         <section id="sectionForm">
             <h1>Lista de Tarefas</h1>
-            <article id="form">
+
+            <article id="form" class="form">
                 <input type="text" id="inputText" placeholder="Digite sua tarefa" maxlength="50">
                 <button onclick="adicionar()"><span class="material-symbols-outlined">add</span></button>
             </article>
+
+            <article id="formEdit" class="form">
+                <input type="text" id="inputEdit" placeholder="Reescreva sua tarefa" maxlength="50">
+                <button onclick="alterar()"><span class="material-symbols-outlined">draw</span></button>
+            </article>
+
         </section>
         <section id="sectionLista">
-            <h2>tarefas: <output>0</output></h2>
+            <article>
+                <h2>tarefas: <output>0</output></h2>
+                <button onclick="clearAll()" id="clearBtn">Limpar</button>
+            </article>
             <ul>
             </ul>
         </section>

@@ -6,8 +6,9 @@
     --corCard: #f5f5f5;
     --corPrincipal: #A100E6;
     --corFundo2: #CB77BE;
-    --corFundo3: #693380;
+    --corHover: #693380;
     --corDone: #8e8f8e72;
+    --corEdit: #199400;
 }
 
 * {
@@ -62,7 +63,7 @@ h1 {
     font-size: 2.5rem;
 }
 
-#form {
+.form {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,27 +71,13 @@ h1 {
     height: 40px;
     width: 100%;
 
-    border: 2px solid var(--corPrincipal);
     border-radius: 10px;
     overflow: hidden;
-
 }
 
-#inputText {
-    border: none;
-    outline: none;
-
-    height: 100%;
-
-    font-size: 1.2rem;
-    text-indent: 20px;
-    flex-grow: 1;
-}
-
-#form button {
+.form button {
     all: unset;
-    background-color: var(--corPrincipal);
-    color: var(--corCard);
+    color: #f5f5f5;
 
     text-align: center;
 
@@ -100,6 +87,38 @@ h1 {
     width: 10%;
 
     cursor: pointer;
+}
+
+.form input {
+    border: none;
+    outline: none;
+
+    height: 100%;
+
+    font-size: 1.2rem;
+    text-indent: 20px;
+    flex-grow: 1;
+
+    transition: all .3s;
+}
+
+#form {
+    border: 2px solid var(--corPrincipal);
+}
+
+#formEdit {
+    display: none;
+    border: 2px solid var(--corEdit);
+}
+
+
+
+#form button {
+    background-color: var(--corPrincipal);
+}
+
+#formEdit button {
+    background-color: var(--corEdit);
 }
 
 /* Lista */
@@ -112,21 +131,43 @@ main #sectionLista {
     border-radius: 15px;
 }
 
+#sectionLista article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #sectionLista h2 {
     font-weight: normal;
     text-decoration: underline;
+}
+
+#clearBtn {
+    all: unset;
+    border-radius: 10px;
+    padding: 10px;
+
+    background-color: var(--corPrincipal);
+    color: #fff;
+
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#clearBtn:hover {
+    background-color: var(--corHover);
 }
 
 ul {
     display: flex;
     flex-direction: column;
 
-    gap: 15px;
-
     list-style: none;
 }
 
 li {
+    margin-top: 15px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -142,6 +183,12 @@ li {
     box-shadow: 2px 2px 5px #00000046, -2px -2px 5px #dad8d84d;
 }
 
+li input {
+    accent-color: var(--corPrincipal);
+    height: 25px;
+    width: 25px;
+}
+
 li p {
     width: 100%;
     height: auto;
@@ -152,10 +199,11 @@ li p {
     overflow: hidden;
 }
 
-li input {
-    accent-color: var(--corPrincipal);
-    height: 25px;
-    width: 25px;
+li div {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 5px;
 }
 
 span {
@@ -171,4 +219,30 @@ span {
 .done p {
     text-decoration: line-through;
     font-style: italic;
+}
+
+/* animação form  */
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
