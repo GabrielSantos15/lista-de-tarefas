@@ -1,42 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/media.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/media.css" />
     <title>lista de tarefas</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>
+      <h1>Lista de Tarefas</h1>
+    </header>
     <main>
-        <section id="sectionForm">
-            <h1>Lista de Tarefas</h1>
+      <section id="sectionForm">
+        <form id="formLista">
+          <label for="inputText">Escreva sua tarefa:</label>
+          <span class="taskInputContainer">
+            <input
+              type="text"
+              id="inputText"
+              placeholder="Digite sua tarefa"
+              maxlength="50"
+            />
+            <button>
+              <span class="material-symbols-outlined">add</span>
+            </button>
+          </span>
+          <div>
+            <label for="inputText">Fim da tarefa:</label><br />
 
-            <article id="form" class="form">
-                <input type="text" id="inputText" placeholder="Digite sua tarefa" maxlength="50">
-                <button onclick="adicionar()"><span class="material-symbols-outlined">add</span></button>
-            </article>
+            <span>
+              <label for="dateInput">Data:</label>
+              <input type="date" id="dateInput" class="timeInput" />
+            </span>
+            <span>
+              <label for="timeInput">Hora:</label>
+              <input type="time" id="timeInput" class="timeInput" />
+            </span>
+            <span>
+              <label for="nivelInput">Nivel:</label>
+              <select id="nivelInput" class="timeInput">
+                <option value="Trivial">Trivial</option>
+                <option value="Comum" selected>Comum</option>
+                <option value="Importante">Importante</option>
+              </select>
+            </span>
+          </div>
+        </form>
+        <form id="formEdit">
+          <label for="inputEdit">Reescreva sua tarefa:</label>
+          <span class="taskInputContainer">
+            <input
+              type="text"
+              id="inputEdit"
+              placeholder="Reescreva sua tarefa"
+              maxlength="50"
+              required
+            />
+            <button>
+              <span class="material-symbols-outlined">draw</span>
+            </button>
+          </span>
+        </form>
 
-            <article id="formEdit" class="form">
-                <input type="text" id="inputEdit" placeholder="Reescreva sua tarefa" maxlength="50">
-                <button onclick="alterar()"><span class="material-symbols-outlined">draw</span></button>
-            </article>
+        <picture>
+          <img src="images/imagemFlat.png" alt="" />
+        </picture>
+      </section>
 
-        </section>
-        <section id="sectionLista">
-            <article>
-                <h2>tarefas: <output>0</output></h2>
-                <button onclick="clearAll()" id="clearBtn">Limpar</button>
-            </article>
-            <ul>
-            </ul>
-        </section>
+      <section id="sectionLista">
+        <div>
+          <h2>tarefas: <output>0</output></h2>
+          <button onclick="clearAll()" id="clearBtn">Limpar</button>
+        </div>
+        <ul>
+          <li>Nenhuma tarefa encontrada</li>
+        </ul>
+      </section>
     </main>
-</body>
-<script src="js/index.js"></script>
-
+  </body>
+  <script src="js/index.js"></script>
 </html>

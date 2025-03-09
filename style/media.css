@@ -1,7 +1,7 @@
 /* Tablets */
 @media screen and (min-width: 600px) {
     body {
-        background-image: linear-gradient(var(--corPrincipal), var(--corFundo2));
+        background-image: linear-gradient(var(--corFundo), var(--corFundo2));
         min-height: 100vh;
     }
 }
@@ -9,9 +9,14 @@
 /* desktop */
 @media screen and (min-width: 768px) {
     body {
-        background-image: url('../images/pexels-pixabay-414102.jpg');
+        /* background-image: url('../images/pexels-pixabay-414102.jpg'); */
         background-size: cover;
         background-attachment: fixed;
     }
-
+    main{
+        grid-template-columns: 1fr 1.5fr;
+    }
+    picture{
+        display: block;
+    }
 }
